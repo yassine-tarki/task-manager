@@ -10,7 +10,7 @@ tasks = []
 def show_menu():
     print()
     print("=== TASK MANAGER ===")
-    print("1. Add a task   2. Display   0. Exit")
+    print("1. Add a task   2. Display   3. Search   0. Exit")
 
 
 def add_task():
@@ -31,6 +31,23 @@ def display_tasks():
         print(f"{number}. {task['title']}")
 
 
+def search_tasks():
+    keyword = input("Keyword: ").strip()
+    if keyword == "":
+        print("Error: the keyword cannot be empty.")
+        return
+    found = False
+    for number, task in enumerate(tasks, start=1):
+        # Compare in lowercase so that "python" also finds "Python".
+        if keyword.lower() in task["title"].lower():
+            if not found:
+                print("--- Tasks found ---")
+            print(f"{number}. {task['title']}")
+            found = True
+    if not found:
+        print(f'No task contains "{keyword}".')
+
+
 def main():
     choice = ""
     while choice != "0":
@@ -40,10 +57,12 @@ def main():
             add_task()
         elif choice == "2":
             display_tasks()
+        elif choice == "3":
+            search_tasks()
         elif choice == "0":
             print("Goodbye!")
         else:
-            print("Error: invalid option. Please choose 1, 2 or 0.")
+            print("Error: invalid option. Please choose 1, 2, 3 or 0.")
 
 
 main()
