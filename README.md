@@ -2,6 +2,8 @@
 
 A simple Python console app to manage daily tasks.
 
+Repository: https://github.com/yassine-tarki/task-manager
+
 ## Features
 
 - **1. Add a task**: empty titles are rejected
@@ -18,3 +20,5 @@ Open the folder in VS Code, open `main.py` and click **Run Python File**.
 - [x] Wrote and tested `main.py`
 - [x] Created the Git repository and first commits
 - [x] Added the search feature
+- [x] Published on GitHub (first push)
+- [x] Updated the README (second push)
